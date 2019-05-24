@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="72ef1cfd-476d-4c69-a590-4f1eb33503f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/esprela.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/ExecutionExamples" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/ExecutionExamples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/DBG.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/DBG.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/DBG.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/DBG.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/DBG.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/Graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/Graph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/PathGraph.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/path.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/path.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/path.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Extender/Extender.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Main/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Main/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Main/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Main/test_environment.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/kmer.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/kmer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/kmer.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/sequence.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/sequence_container.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/sequence_container.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/sequence_container.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/sequence_container.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/sequence_container.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Utils/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Utils/utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Utils/Extra/translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Utils/Extra/translator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Utils/script/dsk_script" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Utils/script/dsk_script" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="7" selection-end-column="1" />
+              <folding>
+                <element signature="e#110#222#0" />
+                <element signature="e#224#407#0" />
+                <element signature="e#409#1532#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/utils/utils.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="84" lean-forward="true" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/utils/utils.h" />
+        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="292" />
+    <option name="y" value="-4" />
+    <option name="width" value="1400" />
+    <option name="height" value="967" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="esprela" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esprela" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esprela" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esprela" type="462c0819:PsiDirectoryNode" />
+              <item name="sdsl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esprela" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esprela" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esprela" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esprela" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72ef1cfd-476d-4c69-a590-4f1eb33503f4" name="Default Changelist" comment="" />
+      <created>1558598217292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558598217292</updated>
+      <workItem from="1558598219192" duration="19283000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="19283000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1847" height="983" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18767351" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sdsl/include/sdsl/lcp_vlc.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#1242#1275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdsl/include/sdsl/vectors.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#100#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdsl/include/sdsl/lcp_dac.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#923#941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdsl/include/sdsl/dac_vector.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2010">
+          <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+          <folding>
+            <element signature="e#957#976#0" expanded="true" />
+            <element signature="e#3130#3150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="84" lean-forward="true" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="7" selection-end-column="1" />
+          <folding>
+            <element signature="e#110#222#0" />
+            <element signature="e#224#407#0" />
+            <element signature="e#409#1532#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
