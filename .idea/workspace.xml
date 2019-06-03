@@ -10,11 +10,163 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ef1cfd-476d-4c69-a590-4f1eb33503f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/esprela.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/ExecutionExamples" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/ExecutionExamples" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/operations/GenomicComposition.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/divsufsort.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/divsufsort64.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest-death-test.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest-message.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest-param-test.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest-param-test.h.pump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest-printers.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest-spi.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest-test-part.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest-typed-test.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest_pred_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/gtest_prod.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/custom/gtest-port.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/custom/gtest-printers.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/custom/gtest.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-death-test-internal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-filepath.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-internal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-linked_ptr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-param-util-generated.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-param-util-generated.h.pump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-param-util.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-port-arch.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-port.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-string.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-tuple.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-tuple.h.pump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-type-util.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/gtest/internal/gtest-type-util.h.pump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/bit_vector_il.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/bit_vectors.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/bits.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/bp_support.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/bp_support_algorithm.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/bp_support_g.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/bp_support_gg.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/bp_support_sada.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/coder.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/coder_comma.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/coder_elias_delta.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/coder_elias_gamma.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/coder_fibonacci.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/config.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/construct.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/construct_bwt.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/construct_config.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/construct_isa.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/construct_lcp.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/construct_lcp_helper.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/construct_sa.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/construct_sa_se.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/csa_alphabet_strategy.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/csa_bitcompressed.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/csa_sada.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/csa_sampling_strategy.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/csa_wt.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/cst_fully.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/cst_iterators.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/cst_sada.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/cst_sct3.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/dac_vector.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/enc_vector.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/fast_cache.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/hyb_vector.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/int_vector.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/int_vector_buffer.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/int_vector_io_wrappers.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/int_vector_mapper.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/inv_perm_support.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/io.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/iterators.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/k2_treap.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/k2_treap_algorithm.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/k2_treap_helper.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/k2_tree.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/k2_tree_helper.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/lcp.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/lcp_bitcompressed.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/lcp_byte.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/lcp_dac.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/lcp_support_sada.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/lcp_support_tree.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/lcp_support_tree2.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/lcp_vlc.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/lcp_wt.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/louds_tree.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/memory_management.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/nearest_neighbour_dictionary.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/nn_dict_dynamic.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/qsufsort.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/ram_filebuf.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/ram_fs.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rank_support.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rank_support_scan.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rank_support_v.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rank_support_v5.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/raster_img.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rmq_succinct_sada.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rmq_succinct_sct.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rmq_support.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rmq_support_sparse_table.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rrr_helper.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rrr_vector.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/rrr_vector_15.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/sd_vector.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/sdsl_concepts.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/select_support.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/select_support_mcl.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/select_support_scan.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/sfstream.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/sorted_int_stack.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/sorted_multi_stack_support.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/sorted_stack_support.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/structure_tree.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/suffix_array_algorithm.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/suffix_array_helper.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/suffix_arrays.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/suffix_tree_algorithm.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/suffix_tree_helper.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/suffix_trees.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/uint128_t.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/uint256_t.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/uintx_t.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/util.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/vectors.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/vlc_vector.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wavelet_trees.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wm_int.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_algorithm.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_ap.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_blcd.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_gmr.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_helper.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_huff.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_hutu.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_int.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_pc.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/include/sdsl/wt_rlmn.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/lib/libdivsufsort.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/lib/libdivsufsort64.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/lib/libgtest.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/lib/libgtest_main.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/lib/libsdsl.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/lib/pkgconfig/libdivsufsort.pc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/lib/pkgconfig/libdivsufsort64.pc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/lib/pkgconfig/sdsl-lite.pc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsl/sdsl-lite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/third-party/spades.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Diary" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/ExecutionExamples" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/DBG/.idea/workspace.xml" afterDir="false" />
@@ -38,8 +190,15 @@
       <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/sequence_container.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/sequence_container.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/ReadData/sequence_container.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Utils/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Src/Utils/utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Todo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Utils/Extra/translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Utils/Extra/translator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Utils/script/dsk_script" beforeDir="false" afterPath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/Utils/script/dsk_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/out.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/output" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/script_xermade" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/script_xermade_test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG/script_xermade_trimm" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,34 +211,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="264">
+              <caret line="183" column="34" selection-start-line="183" selection-start-column="34" selection-end-line="183" selection-end-column="34" />
               <folding>
-                <element signature="e#110#222#0" />
-                <element signature="e#224#407#0" />
-                <element signature="e#409#1532#0" />
+                <element signature="e#0#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/utils/utils.h">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/operations/GenomicComposition.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="534">
+              <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Makefile">
+        <entry file="file://$PROJECT_DIR$/operations/GenomicComposition.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="84" lean-forward="true" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="84" />
+            <state relative-caret-position="90">
+              <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/utils.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="120" column="19" lean-forward="true" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -87,13 +253,18 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/utils/utils.h" />
+        <option value="$PROJECT_DIR$/utils/GenomicComposition.h" />
+        <option value="$PROJECT_DIR$/utils/GenomicComposition.cpp" />
+        <option value="$PROJECT_DIR$/utils/GenomicComposition.hpp" />
         <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/operations/GenomicComposition.cpp" />
+        <option value="$PROJECT_DIR$/operations/GenomicComposition.hpp" />
+        <option value="$PROJECT_DIR$/utils/utils.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
       </list>
     </option>
@@ -121,12 +292,12 @@
             <path>
               <item name="esprela" type="b2602c69:ProjectViewProjectNode" />
               <item name="esprela" type="462c0819:PsiDirectoryNode" />
-              <item name="sdsl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="esprela" type="b2602c69:ProjectViewProjectNode" />
               <item name="esprela" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="third-party" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="esprela" type="b2602c69:ProjectViewProjectNode" />
@@ -145,7 +316,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Helsinki/Shordec0.9/viaDBG" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/operations" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -169,12 +345,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558598217292</updated>
-      <workItem from="1558598219192" duration="19283000" />
+      <workItem from="1558598219192" duration="60705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19283000" />
+    <option name="totallyTimeSpent" value="60705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1847" height="983" extended-state="6" />
@@ -245,27 +421,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="84" lean-forward="true" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="84" />
+        <state relative-caret-position="495">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+    <entry file="file://$PROJECT_DIR$/operations/GenomicComposition.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <element signature="e#110#222#0" />
-            <element signature="e#224#407#0" />
-            <element signature="e#409#1532#0" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/operations/GenomicComposition.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/utils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="414">
+          <caret line="120" column="19" lean-forward="true" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="183" column="34" selection-start-line="183" selection-start-column="34" selection-end-line="183" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

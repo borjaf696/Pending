@@ -1,4 +1,5 @@
 #include <vector>
+#include <set>
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -6,6 +7,7 @@
 #include <math.h>
 #include <fstream>
 #include <iostream>
+#include <sys/stat.h>
 #include <boost/config.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/program_options.hpp>
@@ -44,21 +46,41 @@ struct System{
     /*
      * System utils
      */
-    static std::vector<string> getAllFaFqFiles(std::string path)
+    static bool exist(string && s)
+    {
+        struct stat buffer;
+        return (stat(s.c_str(), &buffer) == 0);
+    }
+    static set<string> getAllFaFqFiles(string path, string chain = "", bool recursive = false)
     {
         namespace fs = boost::filesystem;
-        std::vector<string> output;
+        set<string> output;
         fs::path fs_path(path);
         if (fs::is_regular_file(fs_path))
-            output.push_back(path);
+            output.emplace(path);
         else
         {
             for (auto & p : fs::directory_iterator(path))
             {
-                std::ostringstream oss;
-                oss << p;
-                std::string converted_path = oss.str().substr(1, oss.str().size() - 2);
-                output.push_back(converted_path);
+                if (fs::is_regular_file(p))
+                {
+                    bool add = true;
+                    if (chain != "" && (chain != p.path().string()))
+                        add = false;
+                    if (add)
+                    {
+                        ostringstream oss;
+                        oss << p;
+                        string converted_path = oss.str().substr(1, oss.str().size() - 2);
+                        string extension = converted_path.substr(converted_path.rfind('.'));
+                        if (extension == ".fastq" || extension == ".fq" || extension == ".fasta" || extension == ".fa")
+                            output.emplace(converted_path);
+                    }
+                }else if (recursive)
+                {
+                    set<string> files = getAllFaFqFiles(p.path().string(),chain,recursive);
+                    output.insert(files.begin(),files.end());
+                }
             }
         }
         return output;
@@ -99,5 +121,27 @@ struct System{
             file << endl;
         }
         file.close();
+    }
+};
+/*
+ * Basic Operations
+ */
+struct Basics
+{
+    float mean(vector<int> contigsLengthVector)
+    {
+        int count = 0;
+        for (auto v:contigsLengthVector)
+            count += v;
+        return count / contigsLengthVector.size();
+    }
+
+    float standardDeviation(vector<int> contigsLengthVector, float mean)
+    {
+        float var = 0;
+        for (auto v: contigsLengthVector)
+            var += (v-mean)*(v-mean);
+        var /= contigsLengthVector.size();
+        return sqrt(var);
     }
 };
