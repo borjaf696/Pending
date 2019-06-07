@@ -46,6 +46,10 @@ struct System{
     /*
      * System utils
      */
+    static string findExtension(string s)
+    {
+        return s.substr(s.find_last_of(".") + 1);
+    }
     static bool exist(string && s)
     {
         struct stat buffer;
@@ -85,7 +89,6 @@ struct System{
         }
         return output;
     }
-
     static void execute(std::string instruction)
     {
         if (system(instruction.c_str()))
@@ -94,7 +97,6 @@ struct System{
             exit(1);
         }
     }
-
     static std::string appendFiles(std::vector<string> files, std::string newFile)
     {
         std::string instruction = "cat ";
@@ -128,20 +130,51 @@ struct System{
  */
 struct Basics
 {
-    float mean(vector<int> contigsLengthVector)
+    static float mean(vector<int> contigsLengthVector)
     {
         int count = 0;
         for (auto v:contigsLengthVector)
             count += v;
         return count / contigsLengthVector.size();
     }
-
-    float standardDeviation(vector<int> contigsLengthVector, float mean)
+    static float standardDeviation(vector<int> contigsLengthVector, float mean)
     {
         float var = 0;
         for (auto v: contigsLengthVector)
             var += (v-mean)*(v-mean);
         var /= contigsLengthVector.size();
         return sqrt(var);
+    }
+};
+/*
+ * Bioinformatics
+ */
+struct Bio
+{
+    static bool pairedEnd(string A, string B)
+    {
+        string delimiter = ".";
+        string token, token2;
+        size_t posA, posB;
+        while (((posA = A.find(delimiter)) != string::npos) && ((posB = B.find(delimiter)) != string::npos)) {
+            token = A.substr(0, posA);
+            token2 = B.substr(0, posB);
+            cout << token << " "<<token2<<endl;
+            if (token == token2) {
+                A.erase(0, posA + delimiter.length());
+                B.erase(0, posB + delimiter.length());
+            }else{
+                A.replace(A.size(),1,1,'2');
+                cout << A <<" "<<B<<endl;
+                if (A == B)
+                    return true;
+                return false;
+            }
+        }
+        return false;
+    }
+    static bool isFasta(string s)
+    {
+        return (System::findExtension(s) == "fa" || System::findExtension(s) == "fasta");
     }
 };

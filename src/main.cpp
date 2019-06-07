@@ -1,5 +1,6 @@
 #include "../operations/GenomicComposition.hpp"
-#include "../utils/utils.h"
+#include "../sequence/sequence_container.h"
+#include "../sequence/clusterContainer.h"
 
 namespace po = boost::program_options;
 namespace
@@ -11,7 +12,7 @@ using namespace sdsl;
 using namespace std;
 
 void parse_args(int argc, char ** argv, vector<string> * directories, vector<string> * environment,
-        vector<string> * output, vector<string> * preffixes)
+        vector<string> * output, vector<string> * preffixes, bool * clustering, string * binner)
 {
     po::options_description des("Options");
     des.add_options()
@@ -19,7 +20,9 @@ void parse_args(int argc, char ** argv, vector<string> * directories, vector<str
             ("dir,d",po::value<vector<string>>(directories)->multitoken(),"Reads directories one per environment")
             ("environment,e",po::value<vector<string>>(environment)->multitoken(),"Environment which belong each sample")
             ("output,o",po::value<vector<string>>(output)->multitoken(),"Preffixes Output directories")
-            ("preffix,p",po::value<vector<string>>(preffixes)->multitoken(),"Preffixes where metaspades has been run - environment 1");
+            ("clusters,c",po::bool_switch(clustering),"Internal parameter")
+            ("preffix,p",po::value<vector<string>>(preffixes)->multitoken(),"Preffixes where metaspades has been run - environment 1")
+            ("binner,b",po::value<string>(binner), "Binner to produce clusters (metabat/maxbin)");
     po::variables_map vm;
     try {
         po::store(po::command_line_parser(argc,argv).options(des).run(),vm);
@@ -54,28 +57,32 @@ void parse_args(int argc, char ** argv, vector<string> * directories, vector<str
 vector<string> spades_execution(vector<string> files, string output)
 {
     vector<string> output_dirs;
-    for (size_t i = 0; i < files.size(); i+=2)
+    size_t jump = 1;
+    for (size_t i = 0; i < files.size(); i+=jump)
     {
         string output_file = output+to_string(i);
         output_dirs.push_back(output_file);
-        string instruction = "bash -c \"python third-party/spades/bin/metaspades.py -1 "+files[i]+" -2 "+files[i+1]+" -o "+output_file+"\"";
+        string instruction = "";
+        if (Bio::pairedEnd(files[i], files[i+1])) {
+            instruction =
+                    "bash -c \"python third-party/spades/bin/metaspades.py -1 " + files[i] + " -2 " + files[i + 1] +
+                    " -o " + output_file + "\"";
+            jump = 2;
+        } else {
+            if (Bio::isFasta(files[i]))
+                instruction = "bash -c \"python third-party/spades/bin/metaspades.py -s " + files[i] + " -o " + output_file +
+                              " --only-assembler\"";
+            else
+                instruction = "bash -c \"python third-party/spades/bin/metaspades.py -s " + files[i] + " -o " + output_file +
+                        "\"";
+            jump = 1;
+        }
         cout << "Instruction: "<<instruction<<endl;
         System::execute(instruction);
     }
     return output_dirs;
 }
 
-void maxbin_execution(vector<string> files, string output_preffix)
-{
-    string contig_file = "contigs.fasta";
-    string instruction = "bash -c \"perl third-party/MaxBin/run_MaxBin.pl -contig "+contig_file+" ";
-    int num_read = 1;
-    for (auto s:files)
-        instruction+= "-read"+to_string(num_read++)+" "+s+" ";
-    instruction += "-thread 32 -output "+output_preffix+"\"";
-    cout << "Instruction: "<<instruction<<endl;
-    System::execute(instruction);
-}
 vector<Composition> getCompositionsContigs(vector<string> paths)
 {
     vector<Composition> output;
@@ -114,7 +121,7 @@ void buildStructures(string file, sdsl::lcp_bitcompressed<> & lcp,
     cout << "LCP completed" << endl;
 }
 
-void buildFullContigFile(vector<string> path, bit_vector & ds)
+size_t buildFullContigFile(vector<string> path, bit_vector & ds)
 {
     /*
      * Open the created files and concat contigs
@@ -159,8 +166,7 @@ void buildFullContigFile(vector<string> path, bit_vector & ds)
                     }*/
                     if ((line[0] == '@') || (line[0] == '>'))
                     {
-                        singleFile << '>'+to_string(num_contig)<<endl;
-                        num_contig++;
+                        singleFile << '>'+to_string(num_contig++)<<endl;
                     }
                 }
             }
@@ -169,6 +175,23 @@ void buildFullContigFile(vector<string> path, bit_vector & ds)
     }
     ds[num_contig] = 1;
     singleFile.close();
+    return num_contig;
+}
+
+void processHybridClusters(string && directory, vector<bool> hybridClusters)
+{
+    set<string> cluster_files = System::getAllFaFqFiles(directory);
+    vector<string> cluster_files_vect;
+    cluster_files_vect.insert(cluster_files_vect.end(), cluster_files.begin(), cluster_files.end());
+    for (size_t i = 0; i < cluster_files_vect.size();i++)
+    {
+        if (hybridClusters[i])
+        {
+            cout << "File: " << cluster_files_vect[i] << endl;
+            SequenceContainer sc;
+            sc.loadFromFile(cluster_files_vect[i], false);
+        }
+    }
 }
 
 int main(int argc, char** argv)
@@ -179,8 +202,10 @@ int main(int argc, char** argv)
      * For each especific sample just two PE files
      */
     cout << "Starting:"<<endl;
-    vector<string> preffixes, directories,output, environment, f_environments;
-    parse_args(argc, argv,&directories,&environment,&output,&preffixes);
+    string binner = "metabat";
+    vector<string> preffixes, directories,output, environment, f_environments, reads;
+    bool clustering = false;
+    parse_args(argc, argv,&directories,&environment,&output,&preffixes,&clustering,&binner);
     vector<set<string>> ordered_files;
     for (auto d: directories)
     {
@@ -194,8 +219,10 @@ int main(int argc, char** argv)
      * Envirmental Directories ordered
      */
     for (auto s: environmental_samples)
-        for (auto d: s)
-            cout << "Directories: "<<d<<endl;
+        for (auto d: s) {
+            cout << "File: " << d << endl;
+            reads.push_back(d);
+        }
     /*
      * MetaSpades Execution + build full chain
      */
@@ -217,18 +244,20 @@ int main(int argc, char** argv)
             size_t j = 0;
             while ( valid )
             {
-                if (System::exist(preffixes[i]+to_string(j)))
-                    t_assembly.push_back(preffixes[i]+to_string(j));
-                else
+                if (System::exist(preffixes[i]+to_string(j))) {
+                    t_assembly.push_back(preffixes[i] + to_string(j));
+                    f_environments.push_back(environment[i]);
+                }else
                     valid = false;
                 j += 2;
             }
         }
     }
-    for (auto t: t_assembly)
+    for (size_t i = 0; i < t_assembly.size(); ++i)
     {
-        cout << "File (meta): " << t+"/contigs.fasta" << endl;
-        assembly_files.push_back(t+"/contigs.fasta");
+        cout << "File (meta): " << t_assembly[i]+"/contigs.fasta" << endl;
+        cout << "Environment: "<<f_environments[i]<<endl;
+        assembly_files.push_back(t_assembly[i]+"/contigs.fasta");
     }
     /*
      * Genomic Composition
@@ -236,10 +265,6 @@ int main(int argc, char** argv)
     //vector<Composition> compositions = getCompositionsContigs(assembly_files);
     bit_vector dataset_separator(pow(2, 30), 0); /*BitVectors*/
     buildFullContigFile(assembly_files, dataset_separator);
-    /*
-     * MaxBin Execution
-     */
-    maxbin_execution(assembly_files, "output");
     /*
      * Rank/Select supporting
      */
@@ -251,7 +276,23 @@ int main(int argc, char** argv)
         (i > 1 )?cout << "Number of contigs of sample "<<i<<": "<<ss_ds(i)-ss_ds(i-1)<<endl
             :cout << "Number of contigs of sample "<<i<<": "<<ss_ds(i)<<endl;
     }
-
+    /*
+     * Clustering
+     */
+    ClusterContainer cc(reads,f_environments,"output/",binner, clustering, rs_ds);
+    vector<vector<int>> clusters = cc.getClusters();
+    int num_cluster = 0;
+    for (auto v:clusters)
+    {
+        cout << "Number of cluster: "<<num_cluster++<<endl;
+        for (auto c:v)
+            cout << c<<",";
+        cout << endl;
+    }
+    /*
+     * Classify clusters
+     */
+    cc.classifyClusters();
     //CompactDataStructures
     /*csa_wt<wt_huff<rrr_vector<127> >, 512, 1024> fm_index;
     sdsl::lcp_bitcompressed<> lcp;

@@ -15,6 +15,11 @@ op_obj := ${patsubst %.cpp,%.o,${wildcard operations/*.cpp}}
 operations/%.o: operations/%.cpp operations/*hpp
 	${CXX} -c ${CXXFLAGS} $< -o $@
 
+#Read, seq, kmer
+seq_obj := ${patsubst %.cpp,%.o,${wildcard sequence/*.cpp}}
+ReadData/%.o: sequence/%.cpp sequence/*.h
+	${CXX} -c ${CXXFLAGS} $< -o $@
+
 #Main_Execution
 m_main_obj := ${patsubst %.cpp,%.o,${wildcard src/*.cpp}}
 src/%.o: src/%.cpp utils/*.hpp operations/*.hpp
@@ -22,12 +27,13 @@ src/%.o: src/%.cpp utils/*.hpp operations/*.hpp
 m_code := src/main.o
 
 #Running
-all: ${op_obj} ${p_obj} ${m_main_obj}
-	${CXX} ${LINCLUDE} ${LDSDSL} ${LBOOST} ${op_obj} ${p_obj} ${m_code} -o ${BIN_release}
+all: ${op_obj} ${p_obj} ${seq_obj} ${m_main_obj}
+	${CXX} ${LINCLUDE} ${LDSDSL} ${LBOOST} ${op_obj} ${p_obj} ${seq_obj} ${m_code} -o ${BIN_release}
 
 #Clean
 clean:
 	-rm ${p_obj}
 	-rm ${op_obj}
+	-rm ${seq_obj}
 	-rm ${m_main_obj}
 	-rm ${BIN_release}
