@@ -10,6 +10,11 @@ p_obj := ${patsubst %.cpp,%.o,${wildcard utils/*.cpp}}
 utils/%.o: utils/%.cpp utils/*hpp
 	${CXX} -c ${CXXFLAGS} ${LBOOST} $< -o $@
 
+#FS
+fs_obj := ${patsubst %.cpp,%.o,${wildcard fs/*.cpp}}
+fs/%.o: fs/%.cpp fs/*h
+	${CXX} -c ${CXXFLAGS} $< -o $@
+
 #Operations
 op_obj := ${patsubst %.cpp,%.o,${wildcard operations/*.cpp}}
 operations/%.o: operations/%.cpp operations/*hpp
@@ -27,12 +32,13 @@ src/%.o: src/%.cpp utils/*.hpp operations/*.hpp
 m_code := src/main.o
 
 #Running
-all: ${op_obj} ${p_obj} ${seq_obj} ${m_main_obj}
-	${CXX} ${LINCLUDE} ${LDSDSL} ${LBOOST} ${op_obj} ${p_obj} ${seq_obj} ${m_code} -o ${BIN_release}
+all: ${op_obj} ${p_obj} ${seq_obj} ${fs_obj} ${m_main_obj}
+	${CXX} ${LINCLUDE} ${LDSDSL} ${LBOOST} ${op_obj} ${p_obj} ${seq_obj} ${fs_obj} ${m_code} -o ${BIN_release}
 
 #Clean
 clean:
 	-rm ${p_obj}
+	-rm ${fs_obj}
 	-rm ${op_obj}
 	-rm ${seq_obj}
 	-rm ${m_main_obj}

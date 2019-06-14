@@ -1,0 +1,8 @@
+file=$1
+kmerSize=$2
+output=$3
+outputtxt=$4
+minAbundance=$5
+echo $file
+third-party/dsk/dsk -nb-cores 12 -file $file -kmer-size $kmerSize -abundance-min $minAbundance -out $output
+third-party/dsk/dsk2ascii -file $output -out $outputtxt

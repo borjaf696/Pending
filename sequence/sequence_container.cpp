@@ -102,13 +102,13 @@ void SequenceContainer::load(const std::string &path, bool is_paired)
 		std::cout << "Path does not exist\n";
 }
 
-void SequenceContainer::loadFromFile(const std::string& fileName, bool is_paired, size_t side_read)
+void SequenceContainer::loadFromFile(const std::string& fileName, bool is_paired,size_t sample, size_t side_read)
 {
 	std::vector<FastaRecord> records;
 	if (this->isFasta(fileName))
-		this->readFasta(records, fileName, is_paired, side_read);
+		this->readFasta(records, fileName, is_paired, side_read, sample);
 	else
-		this->readFastq(records, fileName, is_paired, side_read);
+		this->readFastq(records, fileName, is_paired, side_read, sample);
     if (side_read)
 	    records.reserve(records.size() * (is_paired)?4:2);
 	std::vector<FastaRecord> complements;
@@ -218,7 +218,7 @@ SequenceContainer::addPairedSequences(std::pair<DnaSequence, DnaSequence> pair_s
 }
 
 size_t SequenceContainer::readFasta(std::vector<FastaRecord>& record
-        ,const std::string& fileName, bool is_paired, size_t side_read)
+        ,const std::string& fileName, bool is_paired, size_t side_read, size_t sample)
 {
 	size_t BUF_SIZE = 32 * 1024 * 1024;
 	char* rawBuffer = new char[BUF_SIZE];
@@ -261,7 +261,7 @@ size_t SequenceContainer::readFasta(std::vector<FastaRecord>& record
 					if (sequence.empty()) throw ParseException("empty sequence");
 
 					record.push_back(FastaRecord(DnaSequence(sequence), header,
-										FastaRecord::Id((side_read)?g_nextSeqId:g_nextRightSeqId)));
+										FastaRecord::Id((side_read)?g_nextSeqId:g_nextRightSeqId),sample));
                     (side_read)?g_nextSeqId += (is_paired)?4:2:g_nextRightSeqId+=4;
 					sequence.clear();
 					header.clear();
@@ -301,7 +301,7 @@ size_t SequenceContainer::readFasta(std::vector<FastaRecord>& record
 }
 
 size_t SequenceContainer::readFastq(std::vector<FastaRecord>& record
-        ,const std::string& fileName, bool is_paired, size_t side_read)
+        ,const std::string& fileName, bool is_paired, size_t side_read, size_t sample)
 {
 	size_t BUF_SIZE = 32 * 1024 * 1024;
 	char* rawBuffer = new char[BUF_SIZE];
@@ -352,7 +352,7 @@ size_t SequenceContainer::readFastq(std::vector<FastaRecord>& record
 			{
 				this->validateSequence(nextLine);
 				record.push_back(FastaRecord(DnaSequence(nextLine), header,
-									FastaRecord::Id((side_read)?g_nextSeqId:g_nextRightSeqId)));
+									FastaRecord::Id((side_read)?g_nextSeqId:g_nextRightSeqId), sample));
                 (side_read)?g_nextSeqId += (is_paired)?4:2:g_nextRightSeqId+=4;
 			}
 			else if (stateCounter == 2)
