@@ -188,17 +188,23 @@ public:
          */
         for (size_t i = 0; i < corrected_files.size(); ++i)
         {
+            cout << "NumEnv: "<<num_env<<endl;
             _initialization(corrected_files[i], num_sample, num_env);
-            num_env = i;
+            num_env = i+1;
         }
         _probTable->calculateProbTable(*(_fsContext));
         cout << "End Basics"<<endl;
         /*
          * Fast-mRMR
          */
-        cout << "Starting fast-mRMR"<<endl;
-        fastmRMR fm(_probTable,_fsContext);
-        cout << "End fast-mRMR"<<endl;
+        cout << "Initializing fast-mRMR"<<endl;
+        fastmRMR fm(_probTable,_fsContext, num_env+1);
+        cout << "End initialization fast-mRMR"<<endl;
+        vector<size_t> fselection = fm.getFeatures(0.8);
+        cout << "Features 1: "<<endl;
+        for (auto f:fselection)
+            cout <<f<<", ";
+        cout << endl;
     }
 private:
     /*

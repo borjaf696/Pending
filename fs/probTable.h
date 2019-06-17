@@ -9,6 +9,9 @@
     #endif
     #define KMER_SIZE 50
     #define RANGE_VALUES 9 /*Always equal or higher the number of environments*/
+    #define MAX_REDUNCANCY 999999
+    #define MAX_MI 999999
+    #define MINIMAL -99999
 
     #include <math.h>
     #include <vector>
@@ -81,17 +84,18 @@
     class fastmRMR
     {
     public:
-        fastmRMR(ProbTable *, FSContext *);
+        fastmRMR(ProbTable *, FSContext *, size_t);
         ~fastmRMR()
         {
             free(_relevance);
             free(_redundance);
         }
-        vector<size_t> getFeature();
+        vector<size_t> getFeatures(probability);
     private:
+        probability _updateRedundances(vector<size_t>&);
         void _getRelevances();
-        size_t _num_features;
-        bit * _relevance, * _redundance;
+        size_t _num_features, _best_feature;
+        probability * _relevance, * _redundance, _max_MI;
         ProbTable * _pt;
         FSContext * _fsc;
     };
